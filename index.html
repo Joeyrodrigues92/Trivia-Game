@@ -15,14 +15,16 @@
 			<h1 id = 'title'>Geography Trivia</h1>
 
 			<button type="button" id ='start'>Start</button>
+			<button type="button" id ='restart'>Restart</button>
 
 			<h2 id = 'correct'></h2>
 			
 			<h2 id ='wrong'></h2>
 
-		<form  class = "everyThing">
-		  	<div class= 'hide'>
+		<form  id= "everyThing">
+		  	
 				<div id = 'display'>00:00</div>
+
 				<p class = 'questions'>1. What continent is Turkey located in?</p>
 				
 					<input type="radio" name="q1" value="a" ><label for="q1a">North America</label><br/>
@@ -122,7 +124,7 @@
 					<input type="radio" name="q10" value="c" id="q1c"><label for="q1c">Russia</label><br/>
 					
 					<input type="radio" name="q10" value="d" id="q1d"><label for="q1d">Mexico</label><br/>
-			</div>
+			
 		</form>
 	</section>
 
@@ -131,8 +133,7 @@
 	
     <!-- Begin our custom Javascript -->
             <script type="text/javascript">
- 
-		     
+
 
 
 		  //stop watch.
@@ -141,10 +142,12 @@
 		function start() {
 		  counter = setInterval(count, 1000);
 
+		  console.log('start-time');
+
 		}
 
 		function count() {
- 
+ 		console.log('count-works')
 		  time--;
 		
 		  var converted = timeConverter(time);
@@ -153,13 +156,21 @@
 
 		  if(time == 0){
 		  	console.log('over');
-		   $('div').empty('.hide');
+		   $('#everyThing').empty('.hide');
 		   $('#wrong').show();
 		   $('#correct').show();
-
+		   $('#restart').show();
+		   $('#display').hide();
 		  }
 
-		 }
+		 };
+		 	//restart button
+		 $('#restart').on('click', function(){
+		 	
+		 	location.reload();
+
+	
+		 })
 
 		function timeConverter(t) {
 
@@ -182,12 +193,24 @@
 
 		    //start button
 
-       $('#start').on('click', startButton);
-      
-       function startButton() {
-       		$('.everyThing').show();
-       		start();
-       }
+      		$('#start').on('click', function(){
+            	
+            	console.log('clecked');
+            
+             $('#everyThing').show();
+           	  start();
+           	  $('#start').hide();
+           	  $('#restart').hide();
+    	 });
+     // $('#start').on('click', startButton);
+    
+       // function startButton() {
+       // 		console.log('hey');
+       // 		$('.everyThing').show();
+       // 		start();
+       // }
+
+
 
 			//radio input
 					var correct = 0;

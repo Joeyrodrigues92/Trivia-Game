@@ -16,7 +16,7 @@ h1 {
 	padding-left: 20px;
 }
 
-.everyThing	{
+#everyThing	{
 	padding-left: 20px;
 	display: none;
 }
@@ -34,3 +34,4 @@ h1 {
 #start {
 	margin-left: 20px;
 }
+
