@@ -2,36 +2,17 @@ body {
 	background-image: url('../images/map.jpg');
 }
 
-#section {
-	border:2px solid red;
-	margin-left:350px;
-	margin-right: 350px;
-	height:2250px;
+h1{
+	font-size: 80px;
+	text-align: center;
+}
+
+#sub-wrapper{
 	background-color: white;
-	font-family: 'Marck Script', cursive;
-	font-size: 25px;
+	text-align: center;
 }
 
-h1 {
-	padding-left: 100px;
-}
-
-#everyThing	{
-	padding-left: 20px;
-	display: none;
-}
-
-#correct {
-	margin-left: 20px;
-	display: none;
-}
-
-#wrong {
-	margin-left: 20px;
-	display: none;
-}
-
-#buttons {
-	margin-left: 120px;
+#counter-number{
+	color: red;
 }
 
